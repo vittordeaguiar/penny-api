@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 00:13
+Última atualização: 2025-12-12 00:25
 
 ## 📋 Issues Abertas
 ### #12 - Documentação com Swagger/OpenAPI
@@ -174,25 +174,6 @@ Implementar `SecurityConfig`. Configurar codificação de senha com `BCryptPassw
 
 ---
 
-### #2 - Implementação da Entidade User e Repository
-
-### Descrição:
-Criar entidade `User` com campos: 
-- UUID id, 
-- String name, 
-- String email, 
-- String password, 
-- LocalDateTime createdAt. 
-
-Mapear anotações JPA. Criar `UserRepository`.
-
-### Critérios de Aceite:
-- [ ] Tabela para usuários criada automaticamente no banco
-- [ ] Campo e-mail deve ser único (`unique=true`)
-
-### Dependências: #1
-
----
-
 ## ✅ Issues Concluídas
+- [x] #2 - Implementação da Entidade User e Repository
 - [x] #1 - Inicialização do Projeto e Configuração do Ambiente
