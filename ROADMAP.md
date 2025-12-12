@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 14:47
+Última atualização: 2025-12-12 15:33
 
 ## 📋 Issues Abertas
 ### #18 - Documentação com Swagger
@@ -60,20 +60,8 @@ Depende de: #9
 
 ---
 
-### #14 - Testes Unitários (Service Layer)
-
-### Descrição:
-Criar testes com JUnit 5 e Mockito para UserService, CategoryService e TransactionService. Focar nas regras de negócio (ex: não permitir categoria de outro usuário).
-
-### Critérios de Aceite:
-- [ ] Cobertura de código das regras de negócio > 80%
-
-## Dependências
-Depende de: Sprint 2 e 3
-
----
-
 ## ✅ Issues Concluídas
+- [x] #14 - Testes Unitários (Service Layer)
 - [x] #12 - Documentação com Swagger/OpenAPI
 - [x] #11 - Endpoint de Resumo Financeiro (Dashboard)
 - [x] #10 - Validações de Negócio Avançadas
