@@ -7,6 +7,7 @@ import com.vittor.pennyapi.entity.User;
 import com.vittor.pennyapi.exception.BusinessRuleException;
 import com.vittor.pennyapi.repository.UserRepository;
 import com.vittor.pennyapi.security.TokenService;
+import com.vittor.pennyapi.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,27 +31,14 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
     private TokenService tokenService;
+
+    @Autowired
+    private UserService userService; // Inject the new UserService
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody @Valid RegisterDTO registerDTO) {
-        if (userRepository.findByEmail(registerDTO.email()).isPresent()) {
-            throw new BusinessRuleException("Email already registered");
-        }
-
-        User newUser = new User();
-        newUser.setName(registerDTO.name());
-        newUser.setEmail(registerDTO.email());
-        newUser.setPassword(passwordEncoder.encode(registerDTO.password()));
-
-        userRepository.save(newUser);
-
+        userService.registerUser(registerDTO); // Delegate to UserService
         return ResponseEntity.status(HttpStatus.CREATED).body("User registered successfully");
     }
 

@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 11:13
+Última atualização: 2025-12-12 14:47
 
 ## 📋 Issues Abertas
 ### #18 - Documentação com Swagger
@@ -63,38 +63,18 @@ Depende de: #9
 ### #14 - Testes Unitários (Service Layer)
 
 ### Descrição:
-<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->
 Criar testes com JUnit 5 e Mockito para UserService, CategoryService e TransactionService. Focar nas regras de negócio (ex: não permitir categoria de outro usuário).
 
 ### Critérios de Aceite:
-<!-- Marque cada item quando completado -->
 - [ ] Cobertura de código das regras de negócio > 80%
 
 ## Dependências
-<!-- Issues que precisam estar concluídas antes desta -->
 Depende de: Sprint 2 e 3
 
 ---
 
-### #12 - Documentação com Swagger/OpenAPI
-
-### Descrição:
-<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->
-Adicionar dependência `springdoc-openapi`. Configurar classe `OpenApiConfig`. Adicionar anotações nos Controllers e DTOs para descrever endpoints e esquemas
-
-### Critérios de Aceite:
-<!-- Marque cada item quando completado -->
-- [ ] Interface acessível em `/swagger-ui.html`
-- [ ] Botão "Authorize" configurado para aceitar o Token JWT
-
-## Dependências
-<!-- Issues que precisam estar concluídas antes desta -->
-Depende de: Todas as anteriores
-
-
----
-
 ## ✅ Issues Concluídas
+- [x] #12 - Documentação com Swagger/OpenAPI
 - [x] #11 - Endpoint de Resumo Financeiro (Dashboard)
 - [x] #10 - Validações de Negócio Avançadas
 - [x] #9 - Handler Global de Exceções
