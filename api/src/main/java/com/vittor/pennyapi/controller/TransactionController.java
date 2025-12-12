@@ -6,6 +6,7 @@ import com.vittor.pennyapi.dto.TransactionSummaryDTO;
 import com.vittor.pennyapi.dto.UpdateTransactionDTO;
 import com.vittor.pennyapi.entity.User;
 import com.vittor.pennyapi.service.TransactionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,6 +22,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/transactions")
+@Tag(name = "Transactions", description = "Operations related to financial transactions")
 public class TransactionController {
 
     @Autowired

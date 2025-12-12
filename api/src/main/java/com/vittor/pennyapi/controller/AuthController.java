@@ -7,6 +7,7 @@ import com.vittor.pennyapi.entity.User;
 import com.vittor.pennyapi.exception.BusinessRuleException;
 import com.vittor.pennyapi.repository.UserRepository;
 import com.vittor.pennyapi.security.TokenService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "Authentication", description = "Operations related to user authentication")
 public class AuthController {
 
     @Autowired

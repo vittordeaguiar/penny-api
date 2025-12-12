@@ -5,6 +5,7 @@ import com.vittor.pennyapi.dto.CreateCategoryDTO;
 import com.vittor.pennyapi.dto.UpdateCategoryDTO;
 import com.vittor.pennyapi.entity.User;
 import com.vittor.pennyapi.service.CategoryService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/categories")
+@Tag(name = "Categories", description = "Operations related to transaction categories")
 public class CategoryController {
 
     @Autowired
