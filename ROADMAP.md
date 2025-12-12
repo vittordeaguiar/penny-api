@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 00:00
+Última atualização: 2025-12-12 00:13
 
 ## 📋 Issues Abertas
 ### #12 - Documentação com Swagger/OpenAPI
@@ -194,18 +194,5 @@ Mapear anotações JPA. Criar `UserRepository`.
 
 ---
 
-### #1 - Inicialização do Projeto e Configuração do Ambiente
-
-### Descrição:
-Criar projeto Spring Boot via Spring Initializr. Configurar pom.xml com dependências (Spring Web, Data JPA, Security, Validation, PostgreSQL Driver, Lombok, JWT Lib). Definir estrutura de pacotes (Controller, Service, Repository, Entity, DTO). Configurar conexão com PostgreSQL via `application.properties`.
-
-### Critérios de Aceite:
-- [ ] Projeto compila sem erros
-- [ ] Conexão com banco de dados estabelecida com sucesso
-- [ ] Estrutura de pastas respeita a arquitetura em camadas
-
-### Dependências: Nenhuma.
-
----
-
 ## ✅ Issues Concluídas
+- [x] #1 - Inicialização do Projeto e Configuração do Ambiente
