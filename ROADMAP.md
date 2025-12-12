@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 00:25
+Última atualização: 2025-12-12 00:34
 
 ## 📋 Issues Abertas
 ### #12 - Documentação com Swagger/OpenAPI
@@ -160,20 +160,7 @@ Criar `AuthController` e DTOs (LoginDTO, RegisterDTO). Implementar rotas `POST /
 
 ---
 
-### #3 - Configuração de Segurança (Spring Security + JWT)
-
-### Descrição:
-Implementar `SecurityConfig`. Configurar codificação de senha com `BCryptPasswordEncoder`. Criar classe utilitária `TokenService` para gerar e validar tokens JWT. Configurar filtro de autenticação Stateless.
-
-### Critérios de Aceite:
-
-- [ ] Endpoints públicos (`/auth`) liberados
-- [ ] Demais endpoints retornando 403 Forbidden sem token
-
-### Dependências: #2 
-
----
-
 ## ✅ Issues Concluídas
+- [x] #3 - Configuração de Segurança (Spring Security + JWT)
 - [x] #2 - Implementação da Entidade User e Repository
 - [x] #1 - Inicialização do Projeto e Configuração do Ambiente
