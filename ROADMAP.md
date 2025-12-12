@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 00:34
+Última atualização: 2025-12-12 00:40
 
 ## 📋 Issues Abertas
 ### #12 - Documentação com Swagger/OpenAPI
@@ -145,22 +145,8 @@ Depende de: #2
 
 ---
 
-### #4 - Endpoints de Autenticação (Auth Controller)
-
-### Descrição:
-Criar `AuthController` e DTOs (LoginDTO, RegisterDTO). Implementar rotas `POST /api/auth/register` e `POST /api/auth/login`.
-
-### Critérios de Aceite:
-
-- [ ] Registro cria usuário com senha criptografada
-- [ ] Login com credencias válidas retorna Token JWT no formato JSON
-- [ ] Login inválido retorna 401/403
-
-### Dependências: #2 e #3 
-
----
-
 ## ✅ Issues Concluídas
+- [x] #4 - Endpoints de Autenticação (Auth Controller)
 - [x] #3 - Configuração de Segurança (Spring Security + JWT)
 - [x] #2 - Implementação da Entidade User e Repository
 - [x] #1 - Inicialização do Projeto e Configuração do Ambiente

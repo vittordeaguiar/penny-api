@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.vittor.penny-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.vittor.penny-api.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/penny-api.iml" filepath="$PROJECT_DIR$/.idea/penny-api.iml" />
     </modules>
   </component>
