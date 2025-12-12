@@ -131,11 +131,19 @@ public class TransactionService {
         }
 
         // Executa query
-        Object[] result = transactionRepository.calculateFinancialSummary(
+        java.util.List<Object[]> resultList = transactionRepository.calculateFinancialSummary(
                 userId,
                 effectiveStartDate,
                 effectiveEndDate
         );
+
+        if (resultList.isEmpty()) {
+             // Should not happen with aggregate query unless something is very wrong, 
+             // but handle gracefully
+             return new TransactionSummaryDTO(BigDecimal.ZERO, BigDecimal.ZERO, effectiveStartDate, effectiveEndDate);
+        }
+
+        Object[] result = resultList.get(0);
 
         // Extrai e converte resultados
         BigDecimal totalIncome = (BigDecimal) result[0];

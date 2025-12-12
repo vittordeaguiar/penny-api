@@ -63,6 +63,15 @@ public class TransactionController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/summary")
+    public ResponseEntity<TransactionSummaryDTO> getFinancialSummary(
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+        UUID userId = getCurrentUserId();
+        TransactionSummaryDTO summary = transactionService.getFinancialSummary(userId, startDate, endDate);
+        return ResponseEntity.ok(summary);
+    }
+
     private UUID getCurrentUserId() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return user.getId();

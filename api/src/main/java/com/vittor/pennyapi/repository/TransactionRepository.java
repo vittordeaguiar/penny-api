@@ -33,7 +33,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, UUID> 
            "WHERE t.user.id = :userId " +
            "AND t.date >= :startDate " +
            "AND t.date <= :endDate")
-    Object[] calculateFinancialSummary(
+    java.util.List<Object[]> calculateFinancialSummary(
             @Param("userId") UUID userId,
             @Param("startDate") LocalDate startDate,
             @Param("endDate") LocalDate endDate

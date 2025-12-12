@@ -94,25 +94,8 @@ Depende de: Todas as anteriores
 
 ---
 
-### #11 - Endpoint de Resumo Financeiro (Dashboard)
-
-### Descrição:
-<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->
-Implementar `GET /api/transactions/summary`. Criar Query JPQL ou Criteria API no Repository para somar receitas e despesas do mês atual/período.
-
-### Critérios de Aceite:
-<!-- Marque cada item quando completado -->
-- [ ] Retorna objeto com `totalIncome`, `totalExpense` e `balance`
-- [ ] Filtragem por período (opcional, mas recomendado)
-
-## Dependências
-<!-- Issues que precisam estar concluídas antes desta -->
-Depende de: #8 
-
-
----
-
 ## ✅ Issues Concluídas
+- [x] #11 - Endpoint de Resumo Financeiro (Dashboard)
 - [x] #10 - Validações de Negócio Avançadas
 - [x] #9 - Handler Global de Exceções
 - [x] #8 - CRUD de Transações e Paginação
