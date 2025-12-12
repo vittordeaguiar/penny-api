@@ -1,0 +1,86 @@
+[
+  {
+    "body": "### Descrição:\n<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->\nAdicionar dependência `springdoc-openapi`. Configurar classe `OpenApiConfig`. Adicionar anotações nos Controllers e DTOs para descrever endpoints e esquemas\n\n### Critérios de Aceite:\n<!-- Marque cada item quando completado -->\n- [ ] Interface acessível em `/swagger-ui.html`\n- [ ] Botão \"Authorize\" configurado para aceitar o Token JWT\n\n## Dependências\n<!-- Issues que precisam estar concluídas antes desta -->\nDepende de: Todas as anteriores\n",
+    "labels": [],
+    "number": 12,
+    "state": "OPEN",
+    "title": "Documentação com Swagger/OpenAPI"
+  },
+  {
+    "body": "### Descrição:\n<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->\nImplementar `GET /api/transactions/summary`. Criar Query JPQL ou Criteria API no Repository para somar receitas e despesas do mês atual/período.\n\n### Critérios de Aceite:\n<!-- Marque cada item quando completado -->\n- [ ] Retorna objeto com `totalIncome`, `totalExpense` e `balance`\n- [ ] Filtragem por período (opcional, mas recomendado)\n\n## Dependências\n<!-- Issues que precisam estar concluídas antes desta -->\nDepende de: #8 \n",
+    "labels": [],
+    "number": 11,
+    "state": "OPEN",
+    "title": "Endpoint de Resumo Financeiro (Dashboard)"
+  },
+  {
+    "body": "### Descrição:\n<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->\nImplementar validações usando Bean Validation e lógica no Service:\n- Data da transação não pode ser futura.\n- Valor monetário deve ser positivo.\n- Validação de formato de e-mail.\n\n### Critérios de Aceite:\n<!-- Marque cada item quando completado -->\n- [ ] Tentativa de criar transação futura retorna 400 Bad Request com mensagem descritiva.\n\n## Dependências\n<!-- Issues que precisam estar concluídas antes desta -->\nDepende de: #8 e #9\n",
+    "labels": [],
+    "number": 10,
+    "state": "OPEN",
+    "title": "Validações de Negócio Avançadas"
+  },
+  {
+    "body": "### Descrição:\n<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->\nImplementar `@ControllerAdvice` para capturar exceções (EntityNotFound, MethodArgumentNotValid, etc.). Retornar JSON padronizado com timestamp, status, erro e mensagem .\n\n### Critérios de Aceite:\n<!-- Marque cada item quando completado -->\n- [ ] Erros de validação retornam lista de campos inválidos\n- [ ] Erro 404 retornado quando recurso não é encontrado\n\n## Dependências\n<!-- Issues que precisam estar concluídas antes desta -->\nDepende de: Sprint 1 e 2",
+    "labels": [],
+    "number": 9,
+    "state": "OPEN",
+    "title": "Handler Global de Exceções"
+  },
+  {
+    "body": "### Descrição:\n<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->\nImplementar `TransactionController` e `TransactionService`. Endpoints de CRUD básico. Implementar paginação no endpoint `GET /api/transactions` usando `Pageable` do Spring Data.\n\n### Critérios de Aceite:\n<!-- Marque cada item quando completado -->\n- [ ] Endpoint de listagem suporta parâmetros `?page=0&size=10`\n- [ ] Criação de transação exige categoria existente e pertencente ao usuário\n\n## Dependências\n<!-- Issues que precisam estar concluídas antes desta -->\nDepende de: #3 \n",
+    "labels": [],
+    "number": 8,
+    "state": "OPEN",
+    "title": "CRUD de Transações e Paginação"
+  },
+  {
+    "body": "### Descrição:\n<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->\nCriar Enum **TransactionType** (INCOME, EXPENSE). Criar entidade **Transaction** (description, amount, type, date, categoryId, userId). Configurar relacionamentos com User e Category.\n\n### Critérios de Aceite:\n<!-- Marque cada item quando completado -->\n- [ ] Campos mapeados corretamente no banco (Amout como BigDecimal)\n- [ ] Relacionamentos FK configurados\n\n## Dependências\n<!-- Issues que precisam estar concluídas antes desta -->\nDepende de: #1 \n",
+    "labels": [],
+    "number": 7,
+    "state": "OPEN",
+    "title": "Implementação do Domínio de Transações"
+  },
+  {
+    "body": "### Descrição:\nImplementar `CategoryController` e `CategoryService`. Endpoints: GET (listar), GET (por id), POST, PUT, DELETE.\n\n### Critérios de Aceite:\n- [ ] Listagem retorna apenas categorias do usuário logado\n- [ ] Validação de campos obrigatórios (nome, cor, etc)\n\n## Dependências\n<!-- Issues que precisam estar concluídas antes desta -->\nDepende de: #1 \n\n",
+    "labels": [],
+    "number": 6,
+    "state": "OPEN",
+    "title": "CRUD de Categorias"
+  },
+  {
+    "body": "### Descrição:\nCriar entidade `Category` (id, name, icon, color, userId). Configurar relacionamento `@ManyToOne` com `User`. Criar DTOs para entrada e saída.\n\n### Critérios de Aceite:\n<!-- Marque cada item quando completado -->\n- [ ] Usuário só pode acessar/criar categorias vinculadas ao seu ID\n\n## Dependências\n<!-- Issues que precisam estar concluídas antes desta -->\nDepende de: #2 \n",
+    "labels": [],
+    "number": 5,
+    "state": "OPEN",
+    "title": "Implementação do Domínio de Categorias"
+  },
+  {
+    "body": "### Descrição:\nCriar `AuthController` e DTOs (LoginDTO, RegisterDTO). Implementar rotas `POST /api/auth/register` e `POST /api/auth/login`.\n\n### Critérios de Aceite:\n\n- [ ] Registro cria usuário com senha criptografada\n- [ ] Login com credencias válidas retorna Token JWT no formato JSON\n- [ ] Login inválido retorna 401/403\n\n### Dependências: #2 e #3 ",
+    "labels": [],
+    "number": 4,
+    "state": "OPEN",
+    "title": "Endpoints de Autenticação (Auth Controller)"
+  },
+  {
+    "body": "### Descrição:\nImplementar `SecurityConfig`. Configurar codificação de senha com `BCryptPasswordEncoder`. Criar classe utilitária `TokenService` para gerar e validar tokens JWT. Configurar filtro de autenticação Stateless.\n\n### Critérios de Aceite:\n\n- [ ] Endpoints públicos (`/auth`) liberados\n- [ ] Demais endpoints retornando 403 Forbidden sem token\n\n### Dependências: #2 ",
+    "labels": [],
+    "number": 3,
+    "state": "OPEN",
+    "title": "Configuração de Segurança (Spring Security + JWT)"
+  },
+  {
+    "body": "### Descrição:\nCriar entidade `User` com campos: \n- UUID id, \n- String name, \n- String email, \n- String password, \n- LocalDateTime createdAt. \n\nMapear anotações JPA. Criar `UserRepository`.\n\n### Critérios de Aceite:\n- [ ] Tabela para usuários criada automaticamente no banco\n- [ ] Campo e-mail deve ser único (`unique=true`)\n\n### Dependências: #1",
+    "labels": [],
+    "number": 2,
+    "state": "OPEN",
+    "title": "Implementação da Entidade User e Repository"
+  },
+  {
+    "body": "### Descrição:\nCriar projeto Spring Boot via Spring Initializr. Configurar pom.xml com dependências (Spring Web, Data JPA, Security, Validation, PostgreSQL Driver, Lombok, JWT Lib). Definir estrutura de pacotes (Controller, Service, Repository, Entity, DTO). Configurar conexão com PostgreSQL via `application.properties`.\n\n### Critérios de Aceite:\n- [ ] Projeto compila sem erros\n- [ ] Conexão com banco de dados estabelecida com sucesso\n- [ ] Estrutura de pastas respeita a arquitetura em camadas\n\n### Dependências: Nenhuma.",
+    "labels": [],
+    "number": 1,
+    "state": "OPEN",
+    "title": "Inicialização do Projeto e Configuração do Ambiente"
+  }
+]
