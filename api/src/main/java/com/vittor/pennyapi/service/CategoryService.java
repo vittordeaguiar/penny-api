@@ -5,6 +5,7 @@ import com.vittor.pennyapi.dto.CreateCategoryDTO;
 import com.vittor.pennyapi.dto.UpdateCategoryDTO;
 import com.vittor.pennyapi.entity.Category;
 import com.vittor.pennyapi.entity.User;
+import com.vittor.pennyapi.exception.BusinessRuleException;
 import com.vittor.pennyapi.exception.ResourceNotFoundException;
 import com.vittor.pennyapi.repository.CategoryRepository;
 import com.vittor.pennyapi.repository.TransactionRepository;
@@ -83,7 +84,7 @@ public class CategoryService {
         }
 
         if (transactionRepository.existsByCategoryId(id)) {
-            throw new IllegalStateException("Cannot delete category with existing transactions");
+            throw new BusinessRuleException("Cannot delete category with existing transactions");
         }
 
         categoryRepository.deleteByIdAndUserId(id, userId);

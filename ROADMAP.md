@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 10:37
+Última atualização: 2025-12-12 10:48
 
 ## 📋 Issues Abertas
 ### #12 - Documentação com Swagger/OpenAPI
@@ -76,25 +76,8 @@ Depende de: Sprint 1 e 2
 
 ---
 
-### #8 - CRUD de Transações e Paginação
-
-### Descrição:
-<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->
-Implementar `TransactionController` e `TransactionService`. Endpoints de CRUD básico. Implementar paginação no endpoint `GET /api/transactions` usando `Pageable` do Spring Data.
-
-### Critérios de Aceite:
-<!-- Marque cada item quando completado -->
-- [ ] Endpoint de listagem suporta parâmetros `?page=0&size=10`
-- [ ] Criação de transação exige categoria existente e pertencente ao usuário
-
-## Dependências
-<!-- Issues que precisam estar concluídas antes desta -->
-Depende de: #3 
-
-
----
-
 ## ✅ Issues Concluídas
+- [x] #8 - CRUD de Transações e Paginação
 - [x] #7 - Implementação do Domínio de Transações
 - [x] #6 - CRUD de Categorias
 - [x] #5 - Implementação do Domínio de Categorias

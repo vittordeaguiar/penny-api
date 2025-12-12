@@ -4,6 +4,7 @@ import com.vittor.pennyapi.dto.LoginDTO;
 import com.vittor.pennyapi.dto.LoginResponseDTO;
 import com.vittor.pennyapi.dto.RegisterDTO;
 import com.vittor.pennyapi.entity.User;
+import com.vittor.pennyapi.exception.BusinessRuleException;
 import com.vittor.pennyapi.repository.UserRepository;
 import com.vittor.pennyapi.security.TokenService;
 import jakarta.validation.Valid;
@@ -13,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,8 +39,7 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody @Valid RegisterDTO registerDTO) {
         if (userRepository.findByEmail(registerDTO.email()).isPresent()) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Email already registered");
+            throw new BusinessRuleException("Email already registered");
         }
 
         User newUser = new User();
@@ -56,23 +55,18 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody @Valid LoginDTO loginDTO) {
-        try {
-            var usernamePassword = new UsernamePasswordAuthenticationToken(
-                    loginDTO.email(),
-                    loginDTO.password()
-            );
+        var usernamePassword = new UsernamePasswordAuthenticationToken(
+                loginDTO.email(),
+                loginDTO.password()
+        );
 
-            Authentication auth = authenticationManager.authenticate(usernamePassword);
-            User user = (User) auth.getPrincipal();
+        Authentication auth = authenticationManager.authenticate(usernamePassword);
+        User user = (User) auth.getPrincipal();
 
-            String token = tokenService.generateToken(user);
+        String token = tokenService.generateToken(user);
 
-            LoginResponseDTO response = new LoginResponseDTO(token, user.getEmail(), user.getName());
+        LoginResponseDTO response = new LoginResponseDTO(token, user.getEmail(), user.getName());
 
-            return ResponseEntity.ok(response);
-        } catch (AuthenticationException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body("Invalid credentials");
-        }
+        return ResponseEntity.ok(response);
     }
 }
