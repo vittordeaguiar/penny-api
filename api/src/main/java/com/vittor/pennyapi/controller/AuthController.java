@@ -51,16 +51,12 @@ public class AuthController {
 
         userRepository.save(newUser);
 
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body("User registered successfully");
+        return ResponseEntity.status(HttpStatus.CREATED).body("User registered successfully");
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody @Valid LoginDTO loginDTO) {
-        var usernamePassword = new UsernamePasswordAuthenticationToken(
-                loginDTO.email(),
-                loginDTO.password()
-        );
+        var usernamePassword = new UsernamePasswordAuthenticationToken(loginDTO.email(), loginDTO.password());
 
         Authentication auth = authenticationManager.authenticate(usernamePassword);
         User user = (User) auth.getPrincipal();
