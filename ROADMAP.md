@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 15:33
+Última atualização: 2025-12-12 16:01
 
 ## 📋 Issues Abertas
 ### #18 - Documentação com Swagger
@@ -43,24 +43,8 @@ Elaborar README.md na raiz do projeto contendo: stack tecnológica, pré-requisi
 
 ---
 
-### #15 - Testes de Integração
-
-### Descrição:
-<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->
-Implementar testes usando TestContainers (subindo container PostgreSQL) e MockMvc para testar os endpoints REST de ponta a ponta.
-
-### Critérios de Aceite:
-<!-- Marque cada item quando completado -->
-- [ ] Teste do fluxo de Registro -> Login -> Criar Categoria -> Criar Transação passando com sucesso.
-
-## Dependências
-<!-- Issues que precisam estar concluídas antes desta -->
-Depende de: #9
-
-
----
-
 ## ✅ Issues Concluídas
+- [x] #15 - Testes de Integração
 - [x] #14 - Testes Unitários (Service Layer)
 - [x] #12 - Documentação com Swagger/OpenAPI
 - [x] #11 - Endpoint de Resumo Financeiro (Dashboard)

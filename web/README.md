@@ -1,87 +1,35 @@
-# Welcome to React Router!
+# Penny API - Frontend (Web)
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Interface de usuário do Penny API, construída com React 19.2.3 e React Router 7.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 🛠️ Stack
 
-## Features
+- **React 19.2.3** - Biblioteca UI
+- **React Router 7.10.1** - Roteamento com SSR
+- **TypeScript 5.9.2** - Type safety
+- **TailwindCSS 4.1.13** - Framework CSS
+- **Vite 7.1.7** - Build tool e dev server
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
+## 🚀 Desenvolvimento
 
 ```bash
 npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Acesse: http://localhost:5173
 
-## Building for Production
-
-Create a production build:
+## 🏗️ Build
 
 ```bash
 npm run build
+npm start
 ```
 
-## Deployment
+## 📚 Documentação Completa
 
-### Docker Deployment
+Para instruções detalhadas de instalação e configuração, consulte o [README principal](../README.md).
 
-To build and run using Docker:
+## 🌐 English Version
 
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+For the English version, see [README.en.md](../README.en.md).
