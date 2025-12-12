@@ -7,6 +7,7 @@ import com.vittor.pennyapi.entity.Category;
 import com.vittor.pennyapi.entity.User;
 import com.vittor.pennyapi.exception.ResourceNotFoundException;
 import com.vittor.pennyapi.repository.CategoryRepository;
+import com.vittor.pennyapi.repository.TransactionRepository;
 import com.vittor.pennyapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,9 @@ public class CategoryService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private TransactionRepository transactionRepository;
 
     @Transactional
     public CategoryResponseDTO create(CreateCategoryDTO dto, UUID userId) {
@@ -76,6 +80,10 @@ public class CategoryService {
     public void delete(UUID id, UUID userId) {
         if (!categoryRepository.existsByIdAndUserId(id, userId)) {
             throw new ResourceNotFoundException("Category not found or does not belong to user");
+        }
+
+        if (transactionRepository.existsByCategoryId(id)) {
+            throw new IllegalStateException("Cannot delete category with existing transactions");
         }
 
         categoryRepository.deleteByIdAndUserId(id, userId);
