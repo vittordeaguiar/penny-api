@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 00:40
+Última atualização: 2025-12-12 10:37
 
 ## 📋 Issues Abertas
 ### #12 - Documentação com Swagger/OpenAPI
@@ -94,58 +94,10 @@ Depende de: #3
 
 ---
 
-### #7 - Implementação do Domínio de Transações
-
-### Descrição:
-<!-- Descreva de forma clara e objetiva o que precisa ser implementado -->
-Criar Enum **TransactionType** (INCOME, EXPENSE). Criar entidade **Transaction** (description, amount, type, date, categoryId, userId). Configurar relacionamentos com User e Category.
-
-### Critérios de Aceite:
-<!-- Marque cada item quando completado -->
-- [ ] Campos mapeados corretamente no banco (Amout como BigDecimal)
-- [ ] Relacionamentos FK configurados
-
-## Dependências
-<!-- Issues que precisam estar concluídas antes desta -->
-Depende de: #1 
-
-
----
-
-### #6 - CRUD de Categorias
-
-### Descrição:
-Implementar `CategoryController` e `CategoryService`. Endpoints: GET (listar), GET (por id), POST, PUT, DELETE.
-
-### Critérios de Aceite:
-- [ ] Listagem retorna apenas categorias do usuário logado
-- [ ] Validação de campos obrigatórios (nome, cor, etc)
-
-## Dependências
-<!-- Issues que precisam estar concluídas antes desta -->
-Depende de: #1 
-
-
-
----
-
-### #5 - Implementação do Domínio de Categorias
-
-### Descrição:
-Criar entidade `Category` (id, name, icon, color, userId). Configurar relacionamento `@ManyToOne` com `User`. Criar DTOs para entrada e saída.
-
-### Critérios de Aceite:
-<!-- Marque cada item quando completado -->
-- [ ] Usuário só pode acessar/criar categorias vinculadas ao seu ID
-
-## Dependências
-<!-- Issues que precisam estar concluídas antes desta -->
-Depende de: #2 
-
-
----
-
 ## ✅ Issues Concluídas
+- [x] #7 - Implementação do Domínio de Transações
+- [x] #6 - CRUD de Categorias
+- [x] #5 - Implementação do Domínio de Categorias
 - [x] #4 - Endpoints de Autenticação (Auth Controller)
 - [x] #3 - Configuração de Segurança (Spring Security + JWT)
 - [x] #2 - Implementação da Entidade User e Repository
