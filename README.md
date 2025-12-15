@@ -35,7 +35,6 @@ Penny API é uma aplicação full-stack para gerenciamento de finanças pessoais
 - 🛡️ Tratamento global de exceções
 - 📚 Documentação interativa com Swagger
 - ✅ Testes automatizados (unitários e integração)
-- 📈 Cobertura de código de 80%
 
 ## 🛠️ Stack Tecnológica
 
@@ -59,7 +58,7 @@ Penny API é uma aplicação full-stack para gerenciamento de finanças pessoais
 ### Testes e Qualidade
 - **JUnit 5** - Framework de testes
 - **TestContainers 1.20.4** - Testes de integração
-- **JaCoCo** - Cobertura de código (80% mínimo)
+- **JaCoCo**
 
 ### Documentação
 - **SpringDoc OpenAPI 3.0.0** - Documentação API
@@ -217,7 +216,7 @@ cd ../web
 npm install
 ```
 
-## ▶️ Executando a Aplicação
+## Executando a Aplicação
 
 ### Backend (API)
 
@@ -255,7 +254,7 @@ A aplicação web estará disponível em: `http://localhost:5173`
 3. Faça login com suas credenciais
 4. Comece a gerenciar suas finanças!
 
-## 🧪 Executando Testes
+## Executando Testes
 
 O projeto possui uma suíte completa de testes com **80% de cobertura mínima**.
 
@@ -310,7 +309,7 @@ api/src/test/java/com/vittor/pennyapi/
     └── TokenServiceTest.java
 ```
 
-## 🔧 Variáveis de Ambiente
+## Variáveis de Ambiente
 
 | Variável | Descrição | Valor Padrão | Obrigatória |
 |----------|-----------|--------------|-------------|
@@ -375,7 +374,7 @@ penny-api/
 └── README.md                     # Este arquivo
 ```
 
-## 📚 Documentação da API
+## Documentação da API
 
 A documentação completa da API está disponível via **Swagger UI**.
 
@@ -432,12 +431,7 @@ curl -X GET http://localhost:8080/api/categories \
   -H "Authorization: Bearer {token-retornado}"
 ```
 
-## 🚀 Próximos Passos
-
-- [ ] **Issue #17** - Preparação para Deploy (Docker)
-- [ ] **Issue #18** - Melhorias no Swagger
-
-## 🤝 Contribuindo
+## Contribuindo
 
 Contribuições são bem-vindas! Para contribuir:
 
@@ -454,15 +448,8 @@ Contribuições são bem-vindas! Para contribuir:
 - Documente novos endpoints no Swagger
 - Escreva mensagens de commit descritivas
 
-## 📄 Licença
-
-A definir.
-
-## 👤 Contato
+## Contato
 
 **Vittor de Aguiar**
 - GitHub: [@vittordeaguiar](https://github.com/vittordeaguiar)
-
----
-
-⭐ Se este projeto foi útil para você, considere dar uma estrela!
+- LinkedIn: [@vittordeaguiar](https://www.linkedin.com/in/vittordeaguiar/)
