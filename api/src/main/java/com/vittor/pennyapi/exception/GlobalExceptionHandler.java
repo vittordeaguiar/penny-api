@@ -143,6 +143,17 @@ public class GlobalExceptionHandler {
     ) {
         String message = "Malformed JSON request. Please check your request body.";
 
+        // Extract the root cause message from Jackson for better debugging
+        Throwable cause = ex.getCause();
+        if (cause != null) {
+            String causeMessage = cause.getMessage();
+            if (causeMessage != null && !causeMessage.isEmpty()) {
+                message = "Invalid request format: " + causeMessage;
+            }
+        }
+
+        log.warn("HTTP message not readable: {}", ex.getMessage());
+
         ErrorResponseDTO error = buildErrorResponse(
                 HttpStatus.BAD_REQUEST,
                 message,

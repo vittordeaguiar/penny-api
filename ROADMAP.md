@@ -1,6 +1,6 @@
 # Penny API - Roadmap de Desenvolvimento
 
-Última atualização: 2025-12-12 16:01
+Última atualização: 2025-12-13 16:27
 
 ## 📋 Issues Abertas
 ### #18 - Documentação com Swagger
@@ -32,18 +32,8 @@ Depende de: Projeto Finalizado
 
 ---
 
-### #16 - Documentação Final (README)
-
-### Descrição:
-Elaborar README.md na raiz do projeto contendo: stack tecnológica, pré-requisitos (Java 21, Docker), como rodar a aplicação, como rodar os testes e link para o Swagger.
-
-### Critérios de Aceite:
-- [ ] Um desenvolvedor novo deve conseguir rodar o projeto apenas lendo o README.
-
-
----
-
 ## ✅ Issues Concluídas
+- [x] #16 - Documentação Final (README)
 - [x] #15 - Testes de Integração
 - [x] #14 - Testes Unitários (Service Layer)
 - [x] #12 - Documentação com Swagger/OpenAPI
